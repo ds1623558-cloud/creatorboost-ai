@@ -1,13 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CreatorBoost AI</title>
-</head>
-<body>
-    <h1>CreatorBoost AI 🚀</h1>
-    <p>Create viral captions, hooks and hashtags.</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreatorBoost AI 🚀</title>
 
-    <input type="text" placeholder="Enter your topic">
-    <button>Generate</button>
+<style>
+body{
+background:#0f172a;
+color:white;
+font-family:Arial,sans-serif;
+padding:20px;
+text-align:center;
+}
+.container{
+max-width:500px;
+margin:auto;
+}
+textarea{
+width:100%;
+height:120px;
+padding:10px;
+border:none;
+border-radius:10px;
+margin-top:10px;
+}
+button{
+background:#22c55e;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+font-size:18px;
+margin-top:15px;
+cursor:pointer;
+}
+.result{
+background:#1e293b;
+padding:15px;
+margin-top:20px;
+border-radius:10px;
+text-align:left;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>CreatorBoost AI 🚀</h1>
+<p>Generate Viral Captions, Hooks & Hashtags</p>
+
+<textarea id="topic" placeholder="Enter your topic..."></textarea>
+
+<button onclick="generate()">Generate</button>
+
+<div class="result" id="output"></div>
+</div>
+
+<script>
+function generate(){
+
+let topic=document.getElementById("topic").value;
+
+let caption="🔥 " + topic + " is changing the game. Don't miss this!";
+
+let hook="⚠️ Nobody is talking about this " + topic + "...";
+
+let hashtags="#viral #fyp #trending #" +
+topic.replace(/\s+/g,'').toLowerCase();
+
+document.getElementById("output").innerHTML=
+"<h3>Caption</h3>"+caption+
+"<h3>Hook</h3>"+hook+
+"<h3>Hashtags</h3>"+hashtags;
+}
+</script>
+
 </body>
 </html>
